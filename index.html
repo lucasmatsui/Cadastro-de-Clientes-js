@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <form name="formCliente">
+    <h1>Cadastro de Cliente</h1>
+    <span id="msg" class="success">Testo teste</span>
+    <input type="text" name="nome" id="nome" placeholder="Nome">
+    <input type="text" name="fone" id="fone" placeholder="Fone">
+    <input type="text" name="idade" id="name" placeholder="Idade">
+    <input type="text" name="email" id="email" placeholder="E-mail">
+    <button type="submit"  class="adicionar" onclick="Pessoa.adicionar(event)">Adicionar</button>
+    <button type="submit" class="listar" onclick="Pessoa.listar(event)">Listar</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Fone</th>
+        <th>Idade</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+  
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
