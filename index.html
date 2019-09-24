@@ -9,28 +9,36 @@
 </head>
 <body>
 
+  <div class="grupo_fonte">
+    <h1>Aumentar a fonte:</h1>
+    <button onclick="font('aumentar')">+A</button>
+    <button onclick="font('normal')">A</button>
+    <button onclick="font('diminuir')">-A</button>
+  </div>
+ 
+
   <form name="formCliente">
-    <h1>Cadastro de Cliente</h1>
-    <span id="msg" class="success">Testo teste</span>
-    <input type="text" name="nome" id="nome" placeholder="Nome">
-    <input type="text" name="fone" id="fone" placeholder="Fone">
-    <input type="text" name="idade" id="name" placeholder="Idade">
-    <input type="text" name="email" id="email" placeholder="E-mail">
-    <button type="submit"  class="adicionar" onclick="adicionar(event)">Adicionar</button>
-    <button type="submit" class="listar" onclick="listar(event)">Listar</button>
+    <h1 id="cadastroClienteText">Cadastro de Cliente</h1>
+    <span id="msg" class="success"></span>
+    <input type="text" name="nome" id="nome" class="input" placeholder="Nome">
+    <input type="text" name="fone" id="fone" class="input" placeholder="Fone">
+    <input type="text" name="idade" id="name" class="input" placeholder="Idade">
+    <input type="text" name="email" id="email" class="input" placeholder="E-mail">
+    <button type="submit"  class="adicionar" class="input" onclick="adicionar(event)">Adicionar</button>
+    <button type="submit" class="listar" class="input" onclick="listar(event)">Listar todos</button>
   </form>
 
   <div class="grupo_busca">
     <input type="text" id="campoBusca">
-    <button onclick="buscar()">Buscar</button>
+    <button onclick="buscar()" id="busca">Buscar</button>
   </div>
   <table>
     <thead>
       <tr>
-        <th>Nome</th>
-        <th>Fone</th>
-        <th>Idade</th>
-        <th>E-mail</th>
+        <th class="th">Nome</th>
+        <th class="th">Fone</th>
+        <th class="th">Idade</th>
+        <th class="th">E-mail</th>
       </tr>
     </thead>
     <tbody id="tbody">

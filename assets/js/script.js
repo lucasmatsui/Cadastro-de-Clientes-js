@@ -33,47 +33,42 @@ adicionar = (e) => {
 listar = (e) => {
   e.preventDefault();
   let tbody = document.getElementById("tbody");
-
-  let list = "";
+  tbody.innerHTML = "";
 
   if(ClientesAdicionados.length === 0) {
-    list =
+    tbody.innerHTML +=
     `
       <tr>
-        <td colspan="4">Não tem nenhum cadastro no momento!</td>
+        <td colspan="4" class="td">Não tem nenhum cadastro no momento!</td>
       </tr>
     `;
-    tbody.innerHTML = list;
     return false;
   }
   
   ClientesAdicionados.map(item => {
-    list +=
+    tbody.innerHTML +=
     `
       <tr>
-        <td>${item.nome}</td>
-        <td>${item.fone}</td>
-        <td>${item.idade}</td>
-        <td>${item.email}</td>
+        <td class="td">${item.nome}</td>
+        <td class="td">${item.fone}</td>
+        <td class="td">${item.idade}</td>
+        <td class="td">${item.email}</td>
       </tr>
-    `
-  });
-
-  tbody.innerHTML = list;
-  
+    `;
+  });  
 }
 
 buscar = () =>{
   let tbody = document.getElementById("tbody");
   let busca = document.getElementById("campoBusca").value;
+  tbody.innerHTML = "";
   
-  let list = "";
   let acharCliente = ClientesAdicionados.filter(cliente => cliente.nome === busca)
   
   if(acharCliente.length !== 0) {
     
     acharCliente.map(item => {      
-      list +=
+      tbody.innerHTML +=
       `
         <tr>
           <td>${item.nome}</td>
@@ -86,17 +81,88 @@ buscar = () =>{
     
   } else {
 
-    list =
+    tbody.innerHTML =
     `
       <tr>
-        <td colspan="4">Não foi encontrado ninguem com esse nome!</td>
+        <td colspan="4" class="td">Não foi encontrado ninguem com esse nome!</td>
       </tr>
     `;
    
+  }   
+}
+
+font = (caracteristica) => {
+  const listar = document.querySelector(".listar");
+  const adicionar = document.querySelector(".adicionar");
+  const th = document.querySelectorAll(".th");
+  const td = document.querySelectorAll(".td");
+  const h1 = document.querySelector("#cadastroClienteText");
+  const input = document.querySelectorAll(".input");
+
+  
+
+  let tamanhoFontButton = parseInt(window.getComputedStyle(listar).fontSize);
+  let tamanhoFontTable = parseInt(window.getComputedStyle(th[0]).fontSize);
+  let tamanhoFontH1 = parseInt(window.getComputedStyle(h1).fontSize);
+  let tamanhoFontInput = parseInt(window.getComputedStyle(input[0]).fontSize);
+
+  console.log(tamanhoFontInput);
+  
+
+  //console.log(tamanhoFontTable);
+  
+  if(caracteristica === 'aumentar' && tamanhoFontButton<= 20) {
+    listar.style.fontSize = (tamanhoFontButton + 2) + "px";
+    adicionar.style.fontSize = (tamanhoFontButton + 2) + "px";
+    h1.style.fontSize = (tamanhoFontH1 + 2) + "px";
+    
+    th.forEach(th => {
+      th.style.fontSize = (tamanhoFontTable + 2) + "px";
+    })
+    td.forEach(td => {
+      td.style.fontSize = (tamanhoFontTable + 2) + "px";
+    })
+    input.forEach(input => {
+      input.style.fontSize = (tamanhoFontInput + 2) + "px";
+    })
+
+
   }
 
-  tbody.innerHTML = list;
-   
+  if(caracteristica === 'diminuir' && tamanhoFontButton > 13) {  
+    listar.style.fontSize = (tamanhoFontButton - 2) + "px";
+    adicionar.style.fontSize = (tamanhoFontButton - 2) + "px";
+    h1.style.fontSize = (tamanhoFontH1 - 2) + "px";
+
+    th.forEach(th => {
+      th.style.fontSize = (tamanhoFontTable - 2) + "px";
+    })
+    td.forEach(td => {
+      td.style.fontSize = (tamanhoFontTable - 2) + "px";
+    })
+    input.forEach(input => {
+      input.style.fontSize = (tamanhoFontInput - 2) + "px";
+    })
+
+  }
+
+  if(caracteristica === 'normal') {
+    listar.style.fontSize = 13 + "px";  
+    adicionar.style.fontSize = 13 + "px";  
+    h1.style.fontSize = 25 + "px";
+
+    th.forEach(th => {
+      th.style.fontSize = 16 + "px";
+    })
+    td.forEach(td => {
+      td.style.fontSize = 16 + "px";
+    })
+    input.forEach(input => {
+      input.style.fontSize = 13 + "px";
+    })
+
+  } 
+
 }
 
 
