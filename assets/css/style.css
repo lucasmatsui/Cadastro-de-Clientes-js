@@ -102,3 +102,30 @@ table tbody td {
   background-color: #fff;
   color: #333;
 }
+
+
+.grupo_busca{
+  margin-top: 20px;
+}
+
+.grupo_busca input {
+  width: 335px;
+  padding: 10px;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.grupo_busca button {
+  cursor: pointer;
+  padding: 10px;
+  margin-left: -4px;
+  background-color: #fff;
+  color: #2194ff;
+  font-weight: bold;
+  border: 0;
+  border-left: 2px solid rgba(0,0,0,.2);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+

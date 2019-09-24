@@ -3,6 +3,7 @@
 - Feito com Javascript puro :smile:
 - Um botão para adicionar e o outro para listar para mostrar a manipulação de
 objetos e array.
+- Campo de busca.
 
 ## Como utilizar ?
 - Apenas abra no seu navegador e seja feliz, não necessita de um localhost.

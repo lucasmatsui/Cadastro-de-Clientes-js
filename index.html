@@ -16,10 +16,14 @@
     <input type="text" name="fone" id="fone" placeholder="Fone">
     <input type="text" name="idade" id="name" placeholder="Idade">
     <input type="text" name="email" id="email" placeholder="E-mail">
-    <button type="submit"  class="adicionar" onclick="Pessoa.adicionar(event)">Adicionar</button>
-    <button type="submit" class="listar" onclick="Pessoa.listar(event)">Listar</button>
+    <button type="submit"  class="adicionar" onclick="adicionar(event)">Adicionar</button>
+    <button type="submit" class="listar" onclick="listar(event)">Listar</button>
   </form>
 
+  <div class="grupo_busca">
+    <input type="text" id="campoBusca">
+    <button onclick="buscar()">Buscar</button>
+  </div>
   <table>
     <thead>
       <tr>
